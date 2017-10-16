@@ -1,13 +1,14 @@
 # Behance-spider
-crawl images from Behance.net, field of textile design as example<br>
-retrieve project URLs and save as xls
+Crawl images from Behance.net, field of textile design as example<br>
+Retrieve project URLs and save as xls
 
 ## Pre-requirements
-install ButterSoup4 and selenium<br>
+Install ButterSoup4 and selenium<br>
 `pip install BeautifulSoup4`<br>
 `pip install selenium`<br>
-install support packages of regular expression, excel and socket connection<br>
-`pip install `<br>
-
-install browser webdriver<br>
-
+Install support packages of regular expression, excel and socket connection<br>
+`pip install re`<br>
+`pip install xlwt`<br>
+`pip install socket`<br>
+Install browser webdriver<br>
+Download and install from browser support page
