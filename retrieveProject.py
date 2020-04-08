@@ -1,3 +1,8 @@
+## This script retrive web contents from Behance.net
+## The records are saved in projectURL.xls
+## Author: Liao Jing
+## 2017-06-08
+
 #coding=utf-8
 
 import sys
