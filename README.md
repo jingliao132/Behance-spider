@@ -15,9 +15,13 @@ Download and install from browser support page
 
 ## Steps
 1. Run RetrieveProject.py<br> 
-THis will grasp project urls from Behance.net, and save in file ProjectURL.xls<br>
+This script will grasp project urls from Behance.net, and save in file ProjectURL.xls<br>
 A pre-generated ProjectURL.xls is provided.<br>
 
 2. Run RetrieveImages.py<br>
-This will download images of each project in ProjectURL.xls, and save in fold 'pic1' under the root<br>
-Downloading process and infomation will be printed
+This script will download images of each project in ProjectURL.xls, and save in fold 'pic1' under the root<br>
+Downloading process and infomation will be printed.<br>
+If fail to download a image from the url, 0 will be writen at the corresponding row in ProjectURL.xls. Else, 1 will be written.
+
+3. Run TransformImages.py<br>
+This script will convert different images to a common JPEG file with RGB colorspace.
