@@ -11,6 +11,7 @@ from selenium import webdriver
 import socket
 import time
 
+# --- func definition
 # print downloading process every 5s
 def Schedule(a, b, c):
     per = 500.00*a*b / c
@@ -18,6 +19,8 @@ def Schedule(a, b, c):
         per = 500
     print '%.2f%%' % per
 
+
+# read image url in xls file and download images
 def readExcelAndDownloadURL(file_name):
     rb = open_workbook(file_name)
     table = rb.sheet_by_name('Sheet1')
@@ -42,6 +45,7 @@ def readExcelAndDownloadURL(file_name):
     print 'Successful retrieved all images!'
 
 
+# open browse driver and download contents from project_url
 def retrieveImage(file_name, project_name, project_url):
 	# change to your webdriver path  
 	driver = webdriver.Chrome(executable_path="C:\Program Files (x86)\Google\Chrome\Application\chromedriver")
@@ -49,11 +53,12 @@ def retrieveImage(file_name, project_name, project_url):
 	js1 = 'return document.body.scrollHeight'
 	js2 = 'window.scrollTo(0, document.body.scrollHeight)'
 	old_scroll_height = 0
+	
 	while(driver.execute_script(js1) > old_scroll_height):
 	    old_scroll_height = driver.execute_script(js1)
 	    driver.execute_script(js2)
 	    time.sleep(3)
-	#print soup
+	
 	soup = BeautifulSoup(driver.page_source, 'lxml')
 	driver.quit()
 
@@ -84,6 +89,8 @@ def retrieveImage(file_name, project_name, project_url):
 				pass
 		
 	return success
+# --- end func definition
 
+# --- script
 socket.setdefaulttimeout(60)  # max waiting time
 readExcelAndDownloadURL('projectURL.xls')
