@@ -1,4 +1,5 @@
 #coding=utf-8
+
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -64,6 +65,7 @@ def writeExcel(data):
 	wb.save('projectURL.xls')
 
 # --- end func definition
+
 # --- scripts
 socket.setdefaulttimeout(30)
 # textile design is at field 95
