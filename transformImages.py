@@ -12,7 +12,7 @@ import numpy as np
 import imageio
 import os
 
-
+# --- func definition
 def gif2png(im):
     try:
         i = 0
@@ -28,8 +28,7 @@ def gif2png(im):
     except EOFError:
         pass
 
-# convert all images in image_dir 
-# and save to image_dir_convert
+# convert all images in image_dir and save to image_dir_convert
 def converimage(image_dir, image):
     im = Image.open(os.path.join(image_dir, image))  #返回一个Image对象
     image_name, _ = os.path.splitext(image)
@@ -65,7 +64,9 @@ def converimage(image_dir, image):
     else:
         print('Dismiss Undefined Format ', image, im.format)
 
+# --- end func definition
 
+# --- script
 image_dir = '/path/to/images'  # change to your directory of images
 
 for root, dirs, files in os.walk(image_dir):
