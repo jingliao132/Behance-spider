@@ -1,4 +1,9 @@
+## This script crawls image according to projectURL.xls 
+## Author: Liao Jing
+## 2017-06-08
+
 #coding=utf-8
+
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
