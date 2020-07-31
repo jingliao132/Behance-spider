@@ -24,4 +24,4 @@ Downloading process and infomation will be printed.<br>
 If fail to download a image from the url, 0 will be writen at the corresponding row in ProjectURL.xls. Else, 1 will be written.
 
 3. Run TransformImages.py<br>
-This script will convert different images to a common JPEG file with RGB colorspace.
+This script will convert different images to JPEG file with RGB colorspace.
