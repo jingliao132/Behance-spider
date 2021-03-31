@@ -43,7 +43,9 @@ def converimage(image_dir, image):
         im = im.convert('RGB') 
 
     if img_format == 'PNG':
-        im.save(os.path.join(convert_dir, image_name +'.jpg'))
+        bg = Image.new("RGB", im.size, (255,255,255)) # the background color is set to (255, 255, 255) by default
+        bg.paste(im, im)
+        bg.save(os.path.join(convert_dir, image_name +'.jpg'))
         
     elif img_format == 'RAW':
         rawData = np.fromfile(os.path.join(image_dir, image), dtype=np.float32)
