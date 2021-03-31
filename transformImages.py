@@ -39,15 +39,16 @@ def converimage(image_dir, image):
         os.mkdir(convert_dir)
     
     img_format = im.format  # 色彩空间转换之后，image.format会变成None
-    if im.mode != 'RGB':
-        im = im.convert('RGB') 
 
     if img_format == 'PNG':
         bg = Image.new("RGB", im.size, (255,255,255)) # the background color is set to (255, 255, 255) by default
         bg.paste(im, im)
         bg.save(os.path.join(convert_dir, image_name +'.jpg'))
+    
+    if im.mode != 'RGB':
+        im = im.convert('RGB') 
         
-    elif img_format == 'RAW':
+    if img_format == 'RAW':
         rawData = np.fromfile(os.path.join(image_dir, image), dtype=np.float32)
         jpgData = rawData.astype(np.uint8)
         imageio.imwrite(os.path.join(convert_dir, image_name +'.jpg'), jpgData)
